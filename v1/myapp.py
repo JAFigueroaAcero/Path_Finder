@@ -43,7 +43,7 @@ def md(doc):
                x_range=(-bound, bound), y_range=(-bound, bound))
     
     source = ColumnDataSource(data=dict(x=[], y=[]))   
-    p.circle(source=source,x='x',y='y') 
+    p.circle(source=source,x='x',y='y',size=10) 
     
     r = p.multi_line(xs = [], ys = [], line_color = 'blue')
     
@@ -241,7 +241,6 @@ def callback(event):
                 yss.append(yloc)
             ds2.data = dict(xs=xss, ys=yss)
             
-            
 
 def handler(event):
     global joining
@@ -255,6 +254,7 @@ def handler(event):
         joining = 3
     else:
         joining = 4
+    print(joining)
 def button_callback():
     sys.exit()
 
